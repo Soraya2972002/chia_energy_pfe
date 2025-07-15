@@ -54,12 +54,16 @@ bash plotting/bladebit_ramplot_plotting.sh
 ```
 ### 2. Monitor Farming
 Run the farming monitoring script (runs for 8 hours by default):
-``` bash farming/farming_monitoring.sh  ```
+```bash 
+bash farming/farming_monitoring.sh
+```
 
 ### 3. Extract Metrics
 After an experiment, extract data using:
 
-```  bash data_extraction/extract_metrics.sh ```
+```bash 
+bash data_extraction/extract_metrics.sh
+```
 
 Make sure to configure: `LOG_DIR`, `DISK_NAME`, `JOB_ID`, `START_TIME`, `END_TIME`
 

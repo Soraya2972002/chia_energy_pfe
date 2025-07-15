@@ -3,6 +3,7 @@
 This repository contains the monitoring and data extraction scripts used for analyzing the **energy consumption** and **storage impact** of different Chia plotting and farming configurations. It is part of a final-year project conducted at **INSA Lyon** and **ESTIN Béjaïa**.
 
 ## Repository Structure
+```
 chia-energy-pfe/
 ├── data_extraction/
 │ ├── disktats_extraction.py # Extract write stats from /proc/diskstats snapshots
@@ -20,6 +21,7 @@ chia-energy-pfe/
 ├── bladebit_ramplot_plotting.sh # Full-RAM plotting with Bladebit
 ├── madmax_plotting.sh # Madmax fast disk plotting
 └── standard_chia_plotting.sh # Standard Chia plotting (v2)
+```
 ## 📊 Features
 
 - Supports monitoring for:

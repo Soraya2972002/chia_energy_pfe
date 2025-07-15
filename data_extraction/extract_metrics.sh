@@ -49,21 +49,34 @@ END_TIME=""
 
 # --------- Extract from PIDSTAT ---------
 echo "[+] Extracting total write data from pidstat.log"
-TB_WRITTEN_PIDSTAT=$(grep 'chia' "$PIDSTAT_LOG" | \
-    awk '{sum += $6} END {printf "%.3f", sum/(1024 * 1024 * 1024)}')
+MB_WRITTEN_PIDSTAT=$(grep 'chia' "$PIDSTAT_LOG" | \
+    awk '{sum += $6} END {printf "%.3f", sum/(1024)}')
 echo "[PIDSTAT] Total written: $TB_WRITTEN_PIDSTAT TB"
 
 # --------- Extract from IOTOP ---------
 echo "[+] Extracting total write rate from iotop.log"
-TB_WRITTEN_IOTOP=$(grep -i 'chia' "$IOTOP_LOG" | awk '
-BEGIN { interval_seconds = 1 }
-{ sum_mb_per_sec += $6 }
+MB_WRITTEN_IOTOP=$(grep -i 'chia' "$IOTOP_LOG" | awk '
+BEGIN { 
+    interval = 1  # Default -b mode samples every 1 second
+    sum_bytes = 0 
+}
+{
+    val = $6
+    unit = $7
+    
+    # Convert all units to bytes/second
+    if (unit == "K/s") sum_bytes += val * 1024
+    else if (unit == "M/s") sum_bytes += val * 1024 * 1024
+    else if (unit == "G/s") sum_bytes += val * 1024 * 1024 * 1024
+    else if (unit == "T/s") sum_bytes += val * 1024 * 1024 * 1024 * 1024
+    else if (unit == "B/s") sum_bytes += val  # Already bytes
+}
 END {
-    total_mb = sum_mb_per_sec * interval_seconds
-    total_tb = total_mb / 1048576
-    printf "%.3f", total_tb
-}')
-echo "[IOTOP] Total written: $TB_WRITTEN_IOTOP TB"
+    total_bytes = sum_bytes * interval
+    printf "Total Chia writes: %.3f MB\n", total_bytes / (1024*1024)
+}'
+)
+echo "[IOTOP] Total written: $MB_WRITTEN_IOTOP MB"
 
 # --------- Extract from /proc/diskstats snapshots ---------
 echo "[+] Extracting disk write deltas from diskstats"

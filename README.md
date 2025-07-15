@@ -1,7 +1,8 @@
 # Chia Energy PFE 🌱⚡
 
-This repository contains the monitoring and data extraction scripts used for analyzing the **energy consumption** and **storage impact** of different Chia plotting and farming configurations. This project was conducted as part of my final-year engineering project at INSA Lyon and ESTIN Béjaïa, **Supervised by:** Mme Clementine Gritti.
-Special thanks for the guidance and support throughout the project.
+This repository contains the monitoring and data extraction scripts used for analyzing the **energy consumption** and **storage impact** of the [Chia's](https://www.chia.net/) blockchain through different plotting and farming configurations. 
+
+This project was conducted as part of my final-year engineering project at INSA Lyon and ESTIN Béjaïa, Supervised by: **Dr Clementine Gritti**. Special thanks for the guidance and support throughout the project.
 ## Repository Structure
 ```
 chia-energy-pfe/

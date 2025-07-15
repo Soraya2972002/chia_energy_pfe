@@ -1,7 +1,7 @@
 # Chia Energy PFE 🌱⚡
 
-This repository contains the monitoring and data extraction scripts used for analyzing the **energy consumption** and **storage impact** of different Chia plotting and farming configurations. It is part of a final-year project conducted at **INSA Lyon** and **ESTIN Béjaïa**.
-
+This repository contains the monitoring and data extraction scripts used for analyzing the **energy consumption** and **storage impact** of different Chia plotting and farming configurations. This project was conducted as part of my final-year engineering project at INSA Lyon and ESTIN Béjaïa, **Supervised by:** Mme Clementine Gritti.
+Special thanks for the guidance and support throughout the project.
 ## Repository Structure
 ```
 chia-energy-pfe/
@@ -40,7 +40,7 @@ chia-energy-pfe/
 - Python 3 (with `json` module)
 - Access to Grid'5000 Wattmeter/Kwollect API
 
-##  Usage
+## ⌨️ Usage
 
 ### 1. Monitor Plotting
 
@@ -61,15 +61,15 @@ After an experiment, extract data using:
 ```  bash data_extraction/extract_metrics.sh ```
 Make sure to configure: LOG_DIR, DISK_NAME, JOB_ID, START_TIME, END_TIME
 
-### License
+## 📚 License
 
 MIT — Free to use, modify, and distribute for research and educational purposes.
 
-### Author
-
+## 🎓 Author
+```
 Soraya Djerrab
-🎓 Computer Engineering & Cybersecurity
-🎓 INSA Lyon / ESTIN Béjaïa
+Computer Engineering & Cybersecurity 
+INSA Lyon / ESTIN Béjaïa
 July 2025
-
+```
 

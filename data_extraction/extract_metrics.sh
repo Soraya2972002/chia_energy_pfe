@@ -84,12 +84,12 @@ python3 disktats_extraction.py
 
 # --------- Extract from Scaphandre (host-level) ---------
 echo "[+] Calculating host-level energy from scaphandre log"
-cat $SCAPHANDRE_LOG | jq -c '.' > scaphandre_json
+cat "$SCAPHANDRE_LOG" | jq -c '.' > scaphandre_json
 python3 disktats_extraction.py
 
 # --------- Extract from Scaphandre (process-level) ---------
 echo "[+] Calculating process-level energy for chia's process from scaphandre log"
-cat $SCAPHANDRE_LOG | jq -c '.' > scaphandre_json
+cat "$SCAPHANDRE_LOG" | jq -c '.' > scaphandre_json
 python3 scaphandre_process_extraction.py
 
 # --------- Extract from Kwollect JSON wattmeter ---------

@@ -59,17 +59,17 @@ Run the farming monitoring script (runs for 8 hours by default):
 After an experiment, extract data using:
 
 ```  bash data_extraction/extract_metrics.sh ```
-Make sure to configure: LOG_DIR, DISK_NAME, JOB_ID, START_TIME, END_TIME
+
+Make sure to configure: `LOG_DIR`, `DISK_NAME`, `JOB_ID`, `START_TIME`, `END_TIME`
 
 ## 📚 License
 
 MIT — Free to use, modify, and distribute for research and educational purposes.
 
 ## 🎓 Author
-```
-Soraya Djerrab
-Computer Engineering & Cybersecurity 
-INSA Lyon / ESTIN Béjaïa
-July 2025
-```
+
+- Soraya Djerrab
+- Computer Engineering & Cybersecurity 
+- INSA Lyon / ESTIN Béjaïa
+- July 2025
 
